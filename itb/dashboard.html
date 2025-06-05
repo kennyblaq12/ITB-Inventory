@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <!-- <link rel="stylesheet" href="login.css"> -->
+    <script src="dashboard.js"></script>
+    <title>ITB NIGERIA LIMITED</title>
+  </head>
+  <body>
+    <div class="tag_bar">
+      <p>ITB INVENTORY SYSTEM</p>
+
+      <div class="tag_bar_right">
+        <!-- <p><a href="Signup.html">Sign Up</a></p> -->
+        <p><a href="index.html">Log Out</a></p>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="search-container">
+        <form class="search-form">
+          <input type="text" placeholder="Search..." name="search" required />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <div class="dashboard-header">
+        <h2>Dashboard</h2>
+        <p>Welcome to the ITB Inventory System Dashboard!</p>
+      </div>
+
+
+
+      <div class="bodys" id="popup">
+      <div class="info">
+        <form class="enter">
+        <label for="Asset Tag">Assert Tag</label>
+          <input type="text" id="asset_tag" name="asset_tag" required />
+
+          <label for="Category">Category</label>
+          <input type="text" id="Category" name="  Category" required />
+
+          <label for="Asset Name">Asset Name</label>
+          <input type="text" id="Asset Name" name="Asset Name" required />
+
+          <label for="Manufacturer">Manufacturer</label>
+          <input type="text" id="Manufacturer" name="Manufacturer" required />
+
+           <label for="Model">Model</label>
+          <input type="text" id="Model" name="Model" required />
+
+          <label for="Serial Number">Serial Number</label>
+          <input type="text" id="Serial Number" name="  Serial Number" required />
+
+          <label for="Assigned To">Assigned To</label>
+          <input type="text" id="Assigned To" name="Assigned To" required />
+
+          <label for="Department">Department</label>
+          <input type="text" id="Department" name="Department" required />
+
+
+          <button type="submit" href="dashboard.html" id="Submit_Btn">
+            <a href="dashboard.html">Submit</a>
+          </button>
+        </form>
+      </div>
+    </div>
+
+      <div class="cards-container">
+        <div class="card">
+          <h3>Total Assets</h3>
+          <p>1247</p>
+          <span>All registered assets</span>
+        </div>
+        <div class="card">
+          <h3>Laptop</h3>
+          <p>92</p>
+          <span>Already Assigned</span>
+        </div>
+        <div class="card">
+          <h3>Screens</h3>
+          <p>355</p>
+          <span>Currently in use</span>
+        </div>
+        <div class="card">
+          <h3>Phones</h3>
+          <p>12</p>
+          <span>In Use</span>
+        </div>
+
+          <div class="card">
+          <h3>Printers</h3>
+          <p>12</p>
+          <span>In Use</span>
+        </div>
+      </div>
+
+      <div class="quick-actions">
+        <h3>Quick Actions</h3>
+       <button id="addNewAssetBtn">Add New Asset</button>
+        <button>View All Assets</button>
+        <button>Generate Reports</button>
+      </div>
+
+
+     
+
+      
+
+
+
+      <!-- dashboard side -->
+       <!-- Add this inside the <body> tag, below your "Quick Actions" section -->
+
+
+
+<!-- table below -->
+ <div class="asset-table-section">
+  <h3>All Added Assets</h3>
+  <div class="table-responsive">
+    <table id="displayTable">
+      <thead>
+        <tr>
+          <th>Asset Tag</th>
+          <th>Category</th>
+          <th>Asset Name</th>
+          <th>Manufacturer</th>
+          <th>Model</th>
+          <th>Serial Number</th>
+          <th>Assigned To</th>
+          <th>Department</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be added dynamically -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+ 
+  </body>
+</html>
