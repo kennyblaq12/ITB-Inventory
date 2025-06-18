@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <script src="/Script/dashboard.js" defer></script>
+    <title>ITB NIGERIA LIMITED - Inventory System</title>
+  </head>
+  <body>
+    <header class="tag_bar">
+      <p>ITB INVENTORY SYSTEM</p>
+      <div class="tag_bar_right">
+        <a href="/Html/index.html">Log Out</a>
+      </div>
+    </header>
+
+    <main class="dashboard-content">
+      <div class="search-action-row">
+        <form class="search-form" action="#" method="GET">
+          <input
+            type="text"
+            placeholder="Search assets..."
+            name="search"
+            required
+            aria-label="Search assets"
+          />
+          <button
+            type="button"
+            id="clearSearchBtn"
+            class="clearbtn"
+            title="Clear search"
+            aria-label="Clear search"
+          >
+            ✕
+          </button>
+          <button type="submit" aria-label="Perform search">Search</button>
+        </form>
+        <button id="addNewAssetBtn" class="add-asset-btn">Add New Asset</button>
+      </div>
+
+      <section class="dashboard-header">
+        <h2>Dashboard Overview</h2>
+        <p>Welcome to the ITB Inventory System Dashboard!</p>
+      </section>
+
+      <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+          <form
+            class="asset-form"
+            id="assetForm"
+            action="assetsubmission.php"
+            method="POST"
+          >
+            <h2 id="formTitle">Add New Asset</h2>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="asset_tag">Asset Tag</label>
+                <input type="text" id="asset_tag" name="asset_tag" required />
+              </div>
+              <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="Category" required>
+                  <option value="">Select Category</option>
+                  <option value="Laptops">Laptops</option>
+                  <option value="Monitors">Monitors</option>
+                  <option value="Printers">Printers</option>
+                  <option value="Desktop">Desktop</option>
+                  <option value="Phones">Phones</option>
+                  <option value="Plotter">Plotter</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="asset_name">Asset Name</label>
+                <input type="text" id="asset_name" name="asset_name" required />
+              </div>
+              <div class="form-group">
+                <label for="manufacturer">Manufacturer</label>
+                <input
+                  type="text"
+                  id="manufacturer"
+                  name="Manufacturer"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="model">Model</label>
+                <input type="text" id="model" name="Model" required />
+              </div>
+              <div class="form-group">
+                <label for="serial_number">Serial Number</label>
+                <input
+                  type="text"
+                  id="serial_number"
+                  name="serial_number"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" name="Status" required>
+                  <option value="">Select Status</option>
+                  <option value="Active">In Use</option>
+                  <option value="Not-In-Use">Not-In-Use</option>
+                  <option value="Damaged">Damaged</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="Location" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="assigned_to">Assigned To</label>
+                <input
+                  type="text"
+                  id="assigned_to"
+                  name="assigned_to"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="department">Department</label>
+                <select id="department" name="Department" required>
+                  <option value="">Select Department</option>
+                  <option value="HR">HR</option>
+                  <option value="IT">IT</option>
+                  <option value="Architecture">Architecture</option>
+                  <option value="Import">Import</option>
+                  <option value="Aluminium">Aluminium</option>
+                  <option value="Logistics">Logistics</option>
+                  <option value="PayRoll">PayRoll</option>
+                  <option value="Account">Account</option>
+                  <option value="Procurement">Procurement</option>
+                  <option value="Int'l Procurement">Int'l Procurement</option>
+                  <option value="QS">QS</option>
+                  <option value="Planning">Planning</option>
+                  <option value="QA-QC">QA-QC</option>
+                  <option value="Safety">Safety</option>
+                  <option value="Fit-Out">Fit-Out</option>
+                  <option value="Marine">Marine</option>
+                  <option value="MEP">MEP</option>
+                  <option value="Admin">Admin</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" id="Submit_Btn">Add Asset</button>
+          </form>
+        </div>
+      </div>
+
+      <section class="cards-container">
+        <div class="card active" data-category="all">
+          <h3>Total Assets</h3>
+          <p id="totalAssetsCount">0</p>
+        </div>
+        <div class="card" data-category="Laptops">
+          <h3>Laptops</h3>
+          <p id="laptopsCount">0</p>
+        </div>
+        <div class="card" data-category="Monitors">
+          <h3>Monitors</h3>
+          <p id="monitorsCount">0</p>
+        </div>
+        <div class="card" data-category="Phones">
+          <h3>Phones</h3>
+          <p id="phonesCount">0</p>
+        </div>
+        <div class="card" data-category="Printers">
+          <h3>Printers</h3>
+          <p id="printersCount">0</p>
+        </div>
+        <div class="card" data-category="Plotter">
+          <h3>Plotter</h3>
+          <p id="plotterCountP">0</p>
+        </div>
+        <div class="card" data-category="Desktop">
+          <h3>Desktop</h3>
+          <p id="desktopCountP">0</p>
+        </div>
+      </section>
+
+      <section class="table-section">
+        <h3>Asset List</h3>
+        <div class="table-responsive">
+          <table id="displayTable">
+            <thead>
+              <tr>
+                <th>Asset Tag</th>
+                <th>Category</th>
+                <th>Asset Name</th>
+                <th>Manufacturer</th>
+                <th>Model</th>
+                <th>Serial Number</th>
+                <th>Location</th>
+                <th>Assigned To</th>
+                <th>Department</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

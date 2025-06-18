@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <title>ITB NIGERIA LIMITED</title>
+  </head>
+  <body>
+    <div class="tag_bar">
+      <p>ITB INVENTORY SYSTEM</p>
+      <div class="tag_bar_right">
+        <p><a href="/Html/index.html">Go Back</a></p>
+        <!-- Add nav links or icons here if needed -->
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="login-container">
+        <form class="login-form" onsubmit="login(event)">
+          <h2>Access Account</h2>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" name="password" required />
+            <span id="toggle-password" class="eye-icon">👁️</span>
+          </div>
+
+          <button type="submit" id="login-button">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="/Script/login.js"></script>
+  </body>
+</html>

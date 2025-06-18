@@ -1,0 +1,268 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif; /* Modern font */
+  background: linear-gradient(
+    135deg,
+    #e0eaff,
+    #a8c0ff
+  ); /* Lighter, more vibrant gradient */
+  min-height: 100vh; /* Ensure full viewport height */
+  display: flex;
+  flex-direction: column;
+  color: #333; /* Softer text color */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* --- Header Section --- */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* More subtle shadow */
+  position: sticky; /* Sticky header for better UX */
+  top: 0;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px; /* Adjust logo size */
+  width: auto;
+}
+
+.logo h1 {
+  font-size: 1.8rem; /* Slightly larger logo text */
+  color: #0d47a1; /* Darker blue for prominence */
+  font-weight: 700;
+}
+
+.main-nav .nav-link {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-right: 25px; /* Spacing between links */
+  transition: color 0.3s ease;
+}
+
+.main-nav .nav-link:hover {
+  color: #0d47a1;
+}
+
+.main-nav .cta-button {
+  background-color: #095fe0; /* Primary button color */
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 5px; /* Slightly rounded corners */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none; /* Remove default button border */
+  cursor: pointer;
+}
+
+.main-nav .cta-button:hover {
+  background-color: #063a8a; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  flex: 1; /* Allows it to take available space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  gap: 50px; /* More space between text and image */
+  max-width: 1200px; /* Max width for content */
+  margin: 0 auto; /* Center content */
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px; /* Control text width */
+  text-align: left;
+}
+
+.hero-content h2 {
+  font-size: 3.5rem; /* Large, impactful heading */
+  color: #0d47a1;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.3rem; /* Readable paragraph text */
+  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.hero-cta-button {
+  display: inline-block; /* Allows padding and margin */
+  background-color: #0d47a1; /* Vibrant orange for main CTA */
+  color: #fff;
+  padding: 15px 35px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  box-shadow: 0 8px 15px rgba(255, 87, 34, 0.3); /* Soft shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-cta-button:hover {
+  background-color: white; /* Darker orange on hover */
+  color: #0d47a1;
+  transform: translateY(-3px); /* More pronounced lift */
+  box-shadow: 0 10px 20px rgba(255, 87, 34, 0.4);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 25px; /* More rounded corners */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.hero-image img:hover {
+  transform: scale(1.03) rotateZ(1deg); /* Subtle rotate and scale */
+}
+
+/* --- Footer --- */
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #fff; /* White text for contrast on gradient */
+  background-color: #0d47a1; /* Dark blue footer background */
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .main-header {
+    padding: 15px 30px;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-section {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h2 {
+    font-size: 2.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-image img {
+    max-width: 80%; /* Adjust image size for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column; /* Stack logo and nav */
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .main-nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-nav .cta-button {
+    width: 80%; /* Make button wider */
+    margin: 10px auto;
+  }
+
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-cta-button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+  }
+
+  .hero-image img {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 10px 15px;
+  }
+
+  .logo h1 {
+    font-size: 1.1rem;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .hero-section {
+    padding: 30px 15px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .hero-cta-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
